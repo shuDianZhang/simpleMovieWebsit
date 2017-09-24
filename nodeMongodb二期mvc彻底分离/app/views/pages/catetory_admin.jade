@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method="post",action="/admin/catetory")
+                .form-group
+                    label.col-sm-2.control-label(for="inputTitle") 电影类型
+                    .col-sm-10
+                        // value=catetory.name 和 value="${catetory.name}" 差别就在前者可以undefine
+                        input#inputTitle.form-control(type="text",name="catetory[name]",value=catetory.name)
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary.pull-right(type="submit") 录入
